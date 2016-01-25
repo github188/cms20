@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence:persistence version="2.0"
+	xmlns:persistence="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence ../../../../target/classes/META-INF/persistence_2_0.xsd ">
+	<persistence:persistence-unit name="pu-common" transaction-type="JTA">
+		<persistence:provider>org.hibernate.ejb.HibernatePersistence</persistence:provider>
+		<persistence:jta-data-source>java:/mysqlDS</persistence:jta-data-source>
+
+		<persistence:class>com.scsvision.database.entity.DicManufacture</persistence:class>
+		<persistence:class>com.scsvision.database.entity.DicType</persistence:class>
+		<persistence:class>com.scsvision.database.entity.Organ</persistence:class>
+		<persistence:class>com.scsvision.database.entity.Server</persistence:class>
+		<persistence:class>com.scsvision.database.entity.User</persistence:class>
+		<persistence:class>com.scsvision.database.entity.UserGroup</persistence:class>
+		<persistence:class>com.scsvision.database.entity.VirtualOrgan</persistence:class>
+		<persistence:class>com.scsvision.database.entity.DicMethod</persistence:class>
+		<persistence:class>com.scsvision.database.entity.StandardNumber</persistence:class>
+		<persistence:class>com.scsvision.database.entity.SvDevice</persistence:class>
+		<persistence:class>com.scsvision.database.entity.TmDevice</persistence:class>
+		<persistence:class>com.scsvision.database.entity.ErrorMessage</persistence:class>
+		<persistence:class>com.scsvision.database.entity.PackageVersion</persistence:class>
+		<persistence:class>com.scsvision.database.entity.DicManagement</persistence:class>
+		<persistence:class>com.scsvision.database.entity.Resource</persistence:class>
+		<persistence:class>com.scsvision.database.entity.ResourceAudio</persistence:class>
+		<persistence:class>com.scsvision.database.entity.ResourceImage</persistence:class>
+		<persistence:class>com.scsvision.database.entity.ResourcePackage</persistence:class>
+		<persistence:class>com.scsvision.database.entity.ResourceVideo</persistence:class>
+		<persistence:class>com.scsvision.database.entity.EventResource</persistence:class>
+		<persistence:class>com.scsvision.database.entity.SvPreset</persistence:class>
+		<persistence:exclude-unlisted-classes />
+
+		<persistence:properties>
+			<persistence:property name="hibernate.hbm2ddl.auto"
+				value="update" />
+			<persistence:property name="hibernate.show_sql"
+				value="false" />
+			<persistence:property name="hibernate.format_sql"
+				value="false" />
+			<persistence:property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+		</persistence:properties>
+	</persistence:persistence-unit>
+</persistence:persistence>

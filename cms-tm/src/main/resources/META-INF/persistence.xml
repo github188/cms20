@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence:persistence version="2.0"
+	xmlns:persistence="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence ../../../../target/classes/META-INF/persistence_2_0.xsd ">
+	<persistence:persistence-unit name="pu-tm" transaction-type="JTA">
+		<persistence:provider>org.hibernate.ejb.HibernatePersistence</persistence:provider>
+		<persistence:jta-data-source>java:/mysqlDS</persistence:jta-data-source>
+
+		<persistence:class>com.scsvision.database.entity.TmMapCenter</persistence:class>
+		<persistence:class>com.scsvision.database.entity.TmCmsPublish</persistence:class>
+		<persistence:class>com.scsvision.database.entity.TmPlayList</persistence:class>
+		
+		<persistence:exclude-unlisted-classes />
+
+		<persistence:properties>
+			<persistence:property name="hibernate.hbm2ddl.auto"
+				value="update" />
+			<persistence:property name="hibernate.show_sql"
+				value="false" />
+			<persistence:property name="hibernate.format_sql"
+				value="false" />
+			<persistence:property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+		</persistence:properties>
+	</persistence:persistence-unit>
+</persistence:persistence>
